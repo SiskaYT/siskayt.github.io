@@ -1,0 +1,155 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0f4e22;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    background-color: rgba(80, 76, 76, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #b87676;
+}
+
+.psaci {
+    background-color: #62d0fc;
+}
+
+.request-button {
+    width: 100%;
+
+}
+
+a {
+    
+    color: #FF0000;
+    width: 100%;
+
+}
+
+c {
+    color: #FF0000;
+}
+
+b {
+    color: #001aff;
+    width: 110%;
+}
+
+.submit-button {
+    background-color: #45a049;
+    width: 100%;
+    color: #245026;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    text-decoration: none;
+    color: #000000;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.instagram {
+    background-color: #E1306C;
+}
+
+.instagram:hover {
+    background-color: #C13584;
+}
+
+.youtube {
+    background-color: #FF0000;
+}
+
+.youtube:hover {
+    background-color: #CC0000;
+}
+
+.discord {
+    background-color: #7289DA;
+}
+
+.discord:hover {
+    background-color: #5A67D8;
+}
+
+.spotify {
+    background-color: chartreuse;
+}
+
+.spotify:hover {
+    background-color: #4CAF50;
+}
+
+.request-button {
+    background-color: #4CAF50;
+}
+
+.request-button:hover {
+    background-color: #45a049;
+}
+
+/* Animace létajících textů */
+.animation-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.moving-text {
+    position: absolute;
+    white-space: nowrap;
+    animation: moveText 10s linear infinite;
+}
+
+@keyframes moveText {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Styly pro formulář */
+.request-form {
+    display: none; /* Skrytý formulář */
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.request-form input,
+.request-form textarea {
+    margin: 5px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.request-form textarea {
+    resize: none;
+}

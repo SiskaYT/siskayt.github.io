@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Od SiskyYT</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Tady je pár socials</h1>
+        <div class="social-buttons">
+            <a href="https://www.instagram.com/siskagamingcz/" class="btn instagram">Instagram.</a>
+            <a href="https://www.youtube.com/@Siska_Gaming_CZ" class="btn youtube">YouTube.</a>
+            <a href="https://discord.gg/TPxjX5rjR9" class="btn discord">Discord.</a>
+            <a href="https://open.spotify.com/artist/5dtGS8XRUIPNiCjrLngLJP?si=4404343f9c384588" id="spotify" class="btn spotify umělec">Spotify oblíbený umělec.</a>
+        </div>
+        <button class="btn request-button" onclick="toggleForm()">Programovací zákázky</button>
+        <div id="request-form" class="request-form">
+            <input class="psaci" type="email" id="email" placeholder="Váš email" required = @>
+            <input class="psaci" type="text" id="discord" placeholder="Váš Discord nick" required>
+            <textarea class="psaci" id="request" placeholder="Co chcete naprogramovat?(minimálně 15 slov)" required></textarea>
+            <c>!Toho erroru si potom nevšímejte!<c>
+            <b>dokážu naprogramovat discord bota, webovky, atd.</b>
+            <div class="submit-button">
+            <button class="btn submit-button" onclick="submitRequest()">Odeslat</button>
+            </div>
+        </div>
+        <div class="animation-container"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
