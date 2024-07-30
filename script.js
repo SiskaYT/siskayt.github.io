@@ -5,14 +5,26 @@ function toggleForm() {
 }
 
 async function submitRequest() {
+    const firstName = document.getElementById('first-name').value;
+    const lastName = document.getElementById('last-name').value;
     const email = document.getElementById('email').value;
     const discord = document.getElementById('discord').value;
     const request = document.getElementById('request').value;
 
-    const webhookURL = 'https://discord.com/api/webhooks/1263235238541136068/4Dyar_zMkCcxtzLMDohwGY-8FKPdSRStpOlojyUQ4VoxgK1wj8Y8cVlYrSClsg8_VT5s'; // Zde zadejte váš webhook URL
+    if (!validateEmail(email)) {
+        alert('Prosím zadejte platný email.');
+        return;
+    }
+
+    if (countWords(request) < 15) {
+        alert('Prosím zadejte žádost obsahující minimálně 15 slov.');
+        return;
+    }
+
+    const webhookURL = 'https://discord.com/api/webhooks/1263235238541136068/4Dyar_zMkCcxtzLMDohwGY-8FKPdSRStpOlojyUQ4VoxgK1wj8Y8cVlYrSClsg8_VT5s';
 
     const data = {
-        content: `Nová programovací žádost:\nEmail: ${email}\nDiscord: ${discord}\nŽádost: ${request}`
+        content: `Nová programovací žádost:\nJméno: ${firstName} ${lastName}\nEmail: ${email}\nDiscord: ${discord}\nŽádost: ${request}`
     };
 
     try {
