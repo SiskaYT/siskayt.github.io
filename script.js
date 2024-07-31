@@ -93,6 +93,11 @@ function changeLanguage(language) {
     elements.programmingCapabilities.textContent = translations[language].programmingCapabilities;
 }
 
+// Zakáže kontextové menu (pravé tlačítko myši)
+document.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+});
+
 function validateEmail(email) {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(String(email).toLowerCase());
