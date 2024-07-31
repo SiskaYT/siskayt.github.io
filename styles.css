@@ -193,3 +193,38 @@ a {
     height: 20px; /* Nastaví fixní výšku tlačítek */
     margin: 0; /* Odstraní margin mezi tlačítky */
 }
+/* Styly pro lištu jazyka */
+.language-bar {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 100;
+}
+
+.language-button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.language-options {
+    display: none;
+    flex-direction: column;
+    background-color: #4CAF50;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.language-options a {
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.language-options a:hover {
+    background-color: #45a049;
+}
