@@ -80,7 +80,7 @@ function changeLanguage(language) {
         programmingCapabilities: document.querySelector('.request-form b')
     };
 
-    elements.title = translations[language].title;
+    document.title = translations[language].title;
     elements.heading.textContent = translations[language].heading;
     elements.programmingRequests.textContent = translations[language].programmingRequests;
     elements.firstName.placeholder = translations[language].firstName;
@@ -96,6 +96,7 @@ function changeLanguage(language) {
 // Zakáže kontextové menu (pravé tlačítko myši)
 document.addEventListener('contextmenu', (e) => {
     e.preventDefault();
+    e.stopPropagation();
 });
 
 function validateEmail(email) {
@@ -150,4 +151,3 @@ async function submitRequest() {
         alert('Došlo k chybě při odesílání žádosti: ' + error);
     }
 }
-/*holy moly*/
