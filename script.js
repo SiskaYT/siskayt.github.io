@@ -12,7 +12,20 @@ const translations = {
         request: "Co chcete naprogramovat? (minimálně 15 slov)",
         errorMessage: "!Toho erroru si potom nevšímejte!",
         submit: "Odeslat",
-        programmingCapabilities: "Dokážu naprogramovat discord bota, webovky, atd."
+        programmingCapabilities: "Dokážu naprogramovat discord bota, webovky, atd.",
+        instagramBtn: "Instagram",
+        youtubeBtn: "YouTube",
+        discordBtn: "Discord",
+        spotify: "Spotify oblíbený umělec (18+)",
+        shopButton: "Shop",
+        languageToggleButton: "🚩Jazyky / Languages🚩",
+        errors: {
+            invalidEmail: "Prosím zadejte platný email.",
+            minWords: "Prosím zadejte žádost obsahující minimálně 15 slov.",
+            requestSent: "Žádost byla úspěšně odeslána!",
+            requestFailed: "Došlo k chybě při odesílání žádosti.",
+            generalError: "Došlo k chybě při odesílání žádosti: "
+        }
     },
     en: {
         title: "About SiskaYT",
@@ -25,7 +38,20 @@ const translations = {
         request: "What do you want to program? (at least 15 words)",
         errorMessage: "Ignore this error!",
         submit: "Submit",
-        programmingCapabilities: "I can program a Discord bot, websites, etc."
+        programmingCapabilities: "I can program a Discord bot, websites, etc.",
+        instagramBtn: "Instagram",
+        youtubeBtn: "YouTube",
+        discordBtn: "Discord",
+        spotify: "Spotify Favorite Artist (18+)",
+        shopButton: "Shop",
+        languageToggleButton: "🚩Languages / Jazyky🚩",
+        errors: {
+            invalidEmail: "Please enter a valid email address.",
+            minWords: "Please enter a request containing at least 15 words.",
+            requestSent: "Your request has been successfully sent!",
+            requestFailed: "There was an error sending the request.",
+            generalError: "There was an error sending the request: "
+        }
     },
     de: {
         title: "Über SiskaYT",
@@ -38,7 +64,20 @@ const translations = {
         request: "Was möchten Sie programmieren? (mindestens 15 Wörter)",
         errorMessage: "Ignorieren Sie diesen Fehler!",
         submit: "Einreichen",
-        programmingCapabilities: "Ich kann einen Discord-Bot, Websites usw. programmieren."
+        programmingCapabilities: "Ich kann einen Discord-Bot, Websites usw. programmieren.",
+        instagramBtn: "Instagram",
+        youtubeBtn: "YouTube",
+        discordBtn: "Discord",
+        spotify: "Spotify Lieblingskünstler (18+)",
+        shopButton: "Shop",
+        languageToggleButton: "🚩Sprachen / Languages🚩",
+        errors: {
+            invalidEmail: "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+            minWords: "Bitte geben Sie eine Anfrage mit mindestens 15 Wörtern ein.",
+            requestSent: "Ihre Anfrage wurde erfolgreich gesendet!",
+            requestFailed: "Beim Senden der Anfrage ist ein Fehler aufgetreten.",
+            generalError: "Beim Senden der Anfrage ist ein Fehler aufgetreten: "
+        }
     },
     fr: {
         title: "À propos de SiskaYT",
@@ -51,9 +90,24 @@ const translations = {
         request: "Que voulez-vous programmer? (au moins 15 mots)",
         errorMessage: "Ignorez cette erreur!",
         submit: "Envoyer",
-        programmingCapabilities: "Je peux programmer un bot Discord, des sites Web, etc."
+        programmingCapabilities: "Je peux programmer un bot Discord, des sites Web, etc.",
+        instagramBtn: "Instagram",
+        youtubeBtn: "YouTube",
+        discordBtn: "Discord",
+        spotify: "Spotify Artiste préféré (18+)",
+        shopButton: "Boutique",
+        languageToggleButton: "🚩Langues / Languages🚩",
+        errors: {
+            invalidEmail: "Veuillez entrer une adresse e-mail valide.",
+            minWords: "Veuillez entrer une demande contenant au moins 15 mots.",
+            requestSent: "Votre demande a été envoyée avec succès !",
+            requestFailed: "Une erreur s'est produite lors de l'envoi de la demande.",
+            generalError: "Une erreur s'est produite lors de l'envoi de la demande : "
+        }
     }
 };
+
+let currentLanguage = 'cs'; // Default language
 
 function toggleForm() {
     const form = document.getElementById('request-form');
@@ -66,10 +120,11 @@ function toggleLanguageBar() {
 }
 
 function changeLanguage(language) {
+    currentLanguage = language;
     const elements = {
         title: document.title,
         heading: document.querySelector('h1'),
-        programmingRequests: document.querySelector('.request-button'),
+        programmingRequests: document.getElementById('request-button'),
         firstName: document.getElementById('first-name'),
         lastName: document.getElementById('last-name'),
         email: document.getElementById('email'),
@@ -77,7 +132,13 @@ function changeLanguage(language) {
         request: document.getElementById('request'),
         errorMessage: document.querySelector('.error-message'),
         submit: document.querySelector('.submit-button button'),
-        programmingCapabilities: document.querySelector('.request-form b')
+        programmingCapabilities: document.querySelector('.request-form b'),
+        instagramBtn: document.getElementById('instagram-btn'),
+        youtubeBtn: document.getElementById('youtube-btn'),
+        discordBtn: document.getElementById('discord-btn'),
+        spotify: document.getElementById('spotify'),
+        shopButton: document.getElementById('shop-button'),
+        languageToggleButton: document.querySelector('.language-button')
     };
 
     document.title = translations[language].title;
@@ -91,9 +152,18 @@ function changeLanguage(language) {
     elements.errorMessage.textContent = translations[language].errorMessage;
     elements.submit.textContent = translations[language].submit;
     elements.programmingCapabilities.textContent = translations[language].programmingCapabilities;
+    elements.instagramBtn.textContent = translations[language].instagramBtn;
+    elements.youtubeBtn.textContent = translations[language].youtubeBtn;
+    elements.discordBtn.textContent = translations[language].discordBtn;
+    elements.spotify.textContent = translations[language].spotify;
+    elements.shopButton.textContent = translations[language].shopButton;
+    elements.languageToggleButton.textContent = translations[language].languageToggleButton;
 }
 
-// Zakáže kontextové menu (pravé tlačítko myši)
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('language-bar').style.display = 'flex';
+});
+
 document.addEventListener('contextmenu', (e) => {
     e.preventDefault();
     e.stopPropagation();
@@ -116,12 +186,12 @@ async function submitRequest() {
     const request = document.getElementById('request').value;
 
     if (!validateEmail(email)) {
-        alert('Prosím zadejte platný email.');
+        alert(translations[currentLanguage].errors.invalidEmail);
         return;
     }
 
     if (countWords(request) < 15) {
-        alert('Prosím zadejte žádost obsahující minimálně 15 slov.');
+        alert(translations[currentLanguage].errors.minWords);
         return;
     }
 
@@ -141,13 +211,13 @@ async function submitRequest() {
         });
         
         if (response.ok) {
-            alert('Žádost byla úspěšně odeslána!');
+            alert(translations[currentLanguage].errors.requestSent);
             document.getElementById('request-form').reset();
             toggleForm();
         } else {
-            alert('Došlo k chybě při odesílání žádosti.');
+            alert(translations[currentLanguage].errors.requestFailed);
         }
     } catch (error) {
-        alert('Došlo k chybě při odesílání žádosti: ' + error);
+        alert(translations[currentLanguage].errors.generalError + error);
     }
 }
