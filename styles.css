@@ -51,12 +51,12 @@ body {
     position: relative;
     z-index: 10;
     text-align: center;
-    background-color: rgba(80, 76, 76, 0.8);
+    background-color: rgba(0, 0, 0, 0.7); /* Změněno na tmavší barvu pro lepší kontrast */
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    border-radius: 15px; /* Zaoblené rohy */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Jemnější a širší stín */
     margin-top: 50px;
-    animation: boxMovement 10s linear infinite;
+    animation: boxMovement 12s ease-in-out infinite; /* Plynulejší animace */
 }
 
 @keyframes boxMovement {
@@ -64,13 +64,13 @@ body {
         transform: translate(0, 0);
     }
     25% {
-        transform: translate(50px, -50px);
+        transform: translate(30px, -30px); /* Mírně menší posun pro plynulejší efekt */
     }
     50% {
-        transform: translate(0, -100px);
+        transform: translate(0, -60px); /* Mírně menší posun pro plynulejší efekt */
     }
     75% {
-        transform: translate(-50px, -50px);
+        transform: translate(-30px, -30px); /* Mírně menší posun pro plynulejší efekt */
     }
     100% {
         transform: translate(0, 0);
@@ -79,32 +79,48 @@ body {
 
 h1 {
     margin-bottom: 20px;
-    color: #2998f3;
+    color: #ffffff; /* Změněno na bílou barvu pro lepší čitelnost */
 }
 
 .psaci {
-    background-color: #62d0fc;
+    background-color: #333333; /* Změněno na tmavší šedou barvu pro lepší kontrast */
+    color: #ffffff; /* Barva textu bílá pro čitelnost */
     margin: 5px 0;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #555555; /* Tmavší okraje */
     border-radius: 5px;
 }
 
 .request-button {
     width: 100%;
     background-color: #4CAF50;
-    color: #000;
+    color: #ffffff; /* Změněno na bílou barvu pro lepší kontrast */
     padding: 10px;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px; /* Zakulacené rohy */
     cursor: pointer;
+    text-decoration: none; /* Odstranění podtržení textu */
 }
 
-a {
-    color: #000;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+.request-button:hover {
+    background-color: #45a049;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: space-between; /* Používá se space-between pro dotýkání */
+    gap: 0; /* Nastaví mezery na 0, aby se tlačítka dotýkala */
+}
+
+.social-buttons .btn {
+    flex: 1; /* Zajistí rovnoměrné rozložení tlačítek */
+    padding: 8px; /* Menší padding pro menší tlačítka */
+    font-size: 0.8em; /* Mírně menší font pro menší tlačítka */
+    height: 35px; /* Menší výška tlačítek */
+    margin: 0; /* Odstraní margin mezi tlačítky */
+    text-decoration: none; /* Odstranění podtržení textu */
+    color: #000000; /* Text černý */
+    border-radius: 20px; /* Zakulacené rohy */
 }
 
 .instagram {
@@ -139,37 +155,15 @@ a {
     background-color: #4CAF50;
 }
 
-.request-button:hover {
-    background-color: #45a049;
-}
-
-/* Styly pro formulář */
-.request-form {
-    display: none;
-    flex-direction: column;
-    margin-top: 20px;
-}
-
-.request-form input,
-.request-form textarea {
-    margin: 5px 0;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.request-form textarea {
-    resize: none;
-}
-
 .submit-button {
     background-color: #45a049;
     width: 100%;
-    color: #000;
+    color: #ffffff; /* Změněno na bílou barvu pro lepší kontrast */
     padding: 10px;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px; /* Zakulacené rohy */
     cursor: pointer;
+    text-decoration: none; /* Odstranění podtržení textu */
 }
 
 .submit-button:hover {
@@ -180,20 +174,26 @@ a {
     color: #FF0000;
 }
 
-.social-buttons {
-    display: flex;
-    justify-content: space-between; /* Používá se space-between pro dotýkání */
-    gap: 0; /* Nastaví mezery na 0, aby se tlačítka dotýkala */
+.request-form {
+    display: none;
+    flex-direction: column;
+    margin-top: 20px;
 }
 
-.social-buttons .btn {
-    flex: 1; /* Zajistí rovnoměrné rozložení tlačítek */
-    padding: 10px; /* Nastaví padding pro tlačítka */
-    font-size: 0.9em; /* Upravuje velikost textu na tlačítkách */
-    height: 20px; /* Nastaví fixní výšku tlačítek */
-    margin: 0; /* Odstraní margin mezi tlačítky */
+.request-form input,
+.request-form textarea {
+    background-color: #333333; /* Změněno na tmavší šedou barvu pro lepší kontrast */
+    color: #ffffff; /* Barva textu bílá pro čitelnost */
+    margin: 5px 0;
+    padding: 10px;
+    border: 1px solid #555555; /* Tmavší okraje */
+    border-radius: 5px;
 }
-/* Styly pro lištu jazyka */
+
+.request-form textarea {
+    resize: none;
+}
+
 .language-bar {
     position: fixed;
     bottom: 10px;
@@ -203,10 +203,10 @@ a {
 
 .language-button {
     background-color: #4CAF50;
-    color: #fff;
+    color: #ffffff; /* Změněno na bílou barvu pro lepší kontrast */
     padding: 10px;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px; /* Zakulacené rohy */
     cursor: pointer;
 }
 
@@ -219,12 +219,44 @@ a {
 }
 
 .language-options a {
-    color: #fff;
+    color: #ffffff; /* Změněno na bílou barvu pro lepší kontrast */
+    text-decoration: none; /* Odstranění podtržení textu */
     padding: 10px;
-    text-decoration: none;
-    transition: background-color 0.3s;
 }
 
 .language-options a:hover {
     background-color: #45a049;
+}
+
+.dark-mode-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #333333; /* Změněno na tmavší šedou barvu pro lepší kontrast */
+    color: #ffffff; /* Barva textu bílá pro čitelnost */
+    border: none;
+    border-radius: 25px; /* Zakulacené rohy */
+    padding: 10px;
+    cursor: pointer;
+    text-decoration: none; /* Odstranění podtržení textu */
+}
+
+.dark-mode-toggle:hover {
+    background-color: #555555;
+}
+
+/* Úpravy tlačítka 'Obchod' */
+.shop-button {
+    background-color: #FFA500; /* Oranžové pozadí */
+    color: #000000; /* Černý text */
+    padding: 10px 20px; /* Větší padding pro lepší vzhled */
+    border: none;
+    border-radius: 25px; /* Oválné rohy */
+    cursor: pointer;
+    text-decoration: none; /* Odstranění podtržení textu */
+    display: inline-block; /* Zajišťuje, že tlačítko se chová jako inline prvek */
+}
+
+.shop-button:hover {
+    background-color: #FF8C00; /* Mírně tmavší oranžová na hover efekt */
 }
