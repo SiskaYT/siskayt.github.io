@@ -250,10 +250,10 @@ h1 {
     background-color: #FFA500; /* Oranžové pozadí */
     color: #000000; /* Černý text */
     padding: 10px 20px; /* Větší padding pro lepší vzhled */
+    text-decoration: none; /* Odstranění podtržení textu */
     border: none;
     border-radius: 25px; /* Oválné rohy */
     cursor: pointer;
-    text-decoration: none; /* Odstranění podtržení textu */
     display: inline-block; /* Zajišťuje, že tlačítko se chová jako inline prvek */
 }
 
