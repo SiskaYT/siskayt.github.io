@@ -17,7 +17,7 @@ const translations = {
         youtubeBtn: "YouTube",
         discordBtn: "Discord",
         spotify: "Spotify oblíbený umělec (18+)",
-        shopButton: "Shop",
+        shopButton: "Navštivte náš obchod",
         languageToggleButton: "🚩Jazyky / Languages🚩",
         errors: {
             invalidEmail: "Prosím zadejte platný email.",
