@@ -1,50 +1,10 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+    margin: 1cm;
+    padding: 1cm;
     overflow: hidden;
     background: radial-gradient(circle, rgba(0, 51, 102, 1) 0%, rgba(102, 204, 255, 0.6) 50%, rgba(0, 51, 102, 1) 100%);
-    background-size: 200% 200%;
-    animation: backgroundAnimation 15s ease infinite, starrySky 150s linear infinite, backgroundPulse 10s ease-in-out infinite;
-}
-
-@keyframes backgroundAnimation {
-    0% {
-        background-position: 0% 0%;
-    }
-    50% {
-        background-position: 100% 100%;
-    }
-    100% {
-        background-position: 0% 0%;
-    }
-}
-
-@keyframes backgroundPulse {
-    0% {
-        background: radial-gradient(circle, rgba(0, 51, 102, 1) 0%, rgba(102, 204, 255, 0.6) 50%, rgba(0, 51, 102, 1) 100%);
-    }
-    50% {
-        background: radial-gradient(circle, rgba(0, 51, 102, 0.9) 0%, rgba(102, 204, 255, 0.7) 50%, rgba(0, 51, 102, 0.9) 100%);
-    }
-    100% {
-        background: radial-gradient(circle, rgba(0, 51, 102, 1) 0%, rgba(102, 204, 255, 0.6) 50%, rgba(0, 51, 102, 1) 100%);
-    }
-}
-
-@keyframes starrySky {
-    0% {
-        background: radial-gradient(circle, rgba(0, 51, 102, 1) 0%, rgba(102, 204, 255, 0.6) 50%, rgba(0, 51, 102, 1) 100%), url('https://cdn.pixabay.com/photo/2018/01/15/07/51/stars-3088334_960_720.jpg');
-        background-blend-mode: overlay;
-    }
-    50% {
-        background: radial-gradient(circle, rgba(0, 51, 102, 1) 0%, rgba(102, 204, 255, 0.5) 50%, rgba(0, 51, 102, 1) 100%), url('https://cdn.pixabay.com/photo/2018/01/15/07/51/stars-3088334_960_720.jpg');
-        background-blend-mode: overlay;
-    }
-    100% {
-        background: radial-gradient(circle, rgba(0, 51, 102, 1) 0%, rgba(102, 204, 255, 0.6) 50%, rgba(0, 51, 102, 1) 100%), url('https://cdn.pixabay.com/photo/2018/01/15/07/51/stars-3088334_960_720.jpg');
-        background-blend-mode: overlay;
-    }
+    background-size: 2000% 200%;
 }
 
 .container {
@@ -52,49 +12,31 @@ body {
     z-index: 10;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.7); /* Změněno na tmavší barvu pro lepší kontrast */
-    padding: 20px;
+    padding: 5cm;
     border-radius: 15px; /* Zaoblené rohy */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Jemnější a širší stín */
-    margin-top: 50px;
-    animation: boxMovement 12s ease-in-out infinite; /* Plynulejší animace */
+    margin-top: 100px;
+    height: 20px ;
 }
 
-@keyframes boxMovement {
-    0% {
-        transform: translate(0, 0);
-    }
-    25% {
-        transform: translate(30px, -30px); /* Mírně menší posun pro plynulejší efekt */
-    }
-    50% {
-        transform: translate(0, -60px); /* Mírně menší posun pro plynulejší efekt */
-    }
-    75% {
-        transform: translate(-30px, -30px); /* Mírně menší posun pro plynulejší efekt */
-    }
-    100% {
-        transform: translate(0, 0);
-    }
+.teleport {
+    background-color: rgb(0, 238, 255);
+    padding: 5px;
+    border-radius: 60px;
 }
 
-h1 {
-    margin-bottom: 20px;
-    color: #ffffff; /* Změněno na bílou barvu pro lepší čitelnost */
-}
-
-.psaci {
-    background-color: #333333; /* Změněno na tmavší šedou barvu pro lepší kontrast */
-    color: #ffffff; /* Barva textu bílá pro čitelnost */
-    margin: 5px 0;
-    padding: 10px;
-    border: 1px solid #555555; /* Tmavší okraje */
-    border-radius: 5px;
+H1 {
+    margin-bottom: 1px;
+    top: 1%;
+    color: #4718f0;
+    overflow: auto;
+    text-align: center;
 }
 
 .request-button {
     width: 100%;
     background-color: #4CAF50;
-    color: #ffffff; /* Změněno na bílou barvu pro lepší kontrast */
+    color: #000000; /* Změněno na bílou barvu pro lepší kontrast */
     padding: 10px;
     border: none;
     border-radius: 25px; /* Zakulacené rohy */
@@ -109,14 +51,14 @@ h1 {
 .social-buttons {
     display: flex;
     justify-content: space-between; /* Používá se space-between pro dotýkání */
-    gap: 0; /* Nastaví mezery na 0, aby se tlačítka dotýkala */
+    gap: 1cm; /* Nastaví mezery na 0, aby se tlačítka dotýkala */
 }
 
 .social-buttons .btn {
     flex: 1; /* Zajistí rovnoměrné rozložení tlačítek */
-    padding: 8px; /* Menší padding pro menší tlačítka */
+    padding: 20px; /* Menší padding pro menší tlačítka */
     font-size: 0.8em; /* Mírně menší font pro menší tlačítka */
-    height: 35px; /* Menší výška tlačítek */
+    height: 20px; /* Menší výška tlačítek */
     margin: 0; /* Odstraní margin mezi tlačítky */
     text-decoration: none; /* Odstranění podtržení textu */
     color: #000000; /* Text černý */
@@ -155,21 +97,6 @@ h1 {
     background-color: #4CAF50;
 }
 
-.submit-button {
-    background-color: #45a049;
-    width: 100%;
-    color: #ffffff; /* Změněno na bílou barvu pro lepší kontrast */
-    padding: 10px;
-    border: none;
-    border-radius: 25px; /* Zakulacené rohy */
-    cursor: pointer;
-    text-decoration: none; /* Odstranění podtržení textu */
-}
-
-.submit-button:hover {
-    background-color: #3e8e41;
-}
-
 .error-message {
     color: #FF0000;
 }
@@ -180,19 +107,6 @@ h1 {
     margin-top: 20px;
 }
 
-.request-form input,
-.request-form textarea {
-    background-color: #333333; /* Změněno na tmavší šedou barvu pro lepší kontrast */
-    color: #ffffff; /* Barva textu bílá pro čitelnost */
-    margin: 5px 0;
-    padding: 10px;
-    border: 1px solid #555555; /* Tmavší okraje */
-    border-radius: 5px;
-}
-
-.request-form textarea {
-    resize: none;
-}
 
 .language-bar {
     position: fixed;
@@ -203,7 +117,7 @@ h1 {
 
 .language-button {
     background-color: #4CAF50;
-    color: #ffffff; /* Změněno na bílou barvu pro lepší kontrast */
+    color: #000000; /* Změněno na bílou barvu pro lepší kontrast */
     padding: 10px;
     border: none;
     border-radius: 25px; /* Zakulacené rohy */
@@ -219,7 +133,7 @@ h1 {
 }
 
 .language-options a {
-    color: #ffffff; /* Změněno na bílou barvu pro lepší kontrast */
+    color: #000000; /* Změněno na bílou barvu pro lepší kontrast */
     text-decoration: none; /* Odstranění podtržení textu */
     padding: 10px;
 }
@@ -259,4 +173,25 @@ h1 {
 
 .shop-button:hover {
     background-color: #FF8C00; /* Mírně tmavší oranžová na hover efekt */
+}
+
+.scrollable-element {
+    height: 400px; /* nebo jiná výška */
+    overflow: auto; /* nebo scroll */
+  }
+
+  
+  body {
+    overflow: auto; /* nebo scroll, pokud chceš, aby byl vždy zobrazen scrollbar */
+  }
+
+  
+  /* Styly pro posuvník (WebKit) */
+::-webkit-scrollbar {
+    width: 0px; /* Šířka posuvníku */
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
 }
