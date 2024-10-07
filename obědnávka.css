@@ -1,0 +1,233 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 1cm;
+    padding: 1cm;
+    overflow: hidden;
+    background: radial-gradient(circle, rgba(0, 51, 102, 1) 0%, rgba(102, 204, 255, 0.6) 50%, rgba(0, 51, 102, 1) 100%);
+    background-size: 2000% 200%;
+}
+
+.container {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7); /* Změněno na tmavší barvu pro lepší kontrast */
+    padding: 6.5cm;
+    border-radius: 15px; /* Zaoblené rohy */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Jemnější a širší stín */
+    margin-top: 100px;
+    height: 200px ;
+}
+
+a {
+    border-radius: 25px;
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #5A67D8;
+    width: 100%;
+    padding: 10px 20px;
+}
+
+H1 {
+    margin-bottom: 1px;
+    top: 1%;
+    color: #4718f0;
+    overflow: auto;
+    text-align: center;
+}
+
+.psaci {
+    background-color: #333333; /* Změněno na tmavší šedou barvu pro lepší kontrast */
+    color: #ffffff; /* Barva textu bílá pro čitelnost */
+    margin: 5px 0;
+    padding: 1cm;
+    border: 1px solid #555555; /* Tmavší okraje */
+    border-radius: 5px;
+}
+
+.request-button {
+    width: 100%;
+    background-color: #4CAF50;
+    color: #ffffff; /* Změněno na bílou barvu pro lepší kontrast */
+    padding: 10px;
+    border: none;
+    border-radius: 25px; /* Zakulacené rohy */
+    cursor: pointer;
+    text-decoration: none; /* Odstranění podtržení textu */
+}
+
+.request-button:hover {
+    background-color: #45a049;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: space-between; /* Používá se space-between pro dotýkání */
+    gap: 1cm; /* Nastaví mezery na 0, aby se tlačítka dotýkala */
+}
+
+.social-buttons .btn {
+    flex: 1; /* Zajistí rovnoměrné rozložení tlačítek */
+    padding: 20px; /* Menší padding pro menší tlačítka */
+    font-size: 0.8em; /* Mírně menší font pro menší tlačítka */
+    height: 20px; /* Menší výška tlačítek */
+    margin: 0; /* Odstraní margin mezi tlačítky */
+    text-decoration: none; /* Odstranění podtržení textu */
+    color: #000000; /* Text černý */
+    border-radius: 20px; /* Zakulacené rohy */
+}
+
+.instagram {
+    background-color: #E1306C;
+}
+
+.instagram:hover {
+    background-color: #C13584;
+}
+
+.youtube {
+    background-color: #FF0000;
+}
+
+.youtube:hover {
+    background-color: #CC0000;
+}
+
+.discord {
+    background-color: #7289DA;
+}
+
+.discord:hover {
+    background-color: #5A67D8;
+}
+
+.spotify {
+    background-color: chartreuse;
+}
+
+.spotify:hover {
+    background-color: #4CAF50;
+}
+
+.submit-button {
+    background-color: #45a049;
+    width: 100%;
+    color: #000000; /* Změněno na bílou barvu pro lepší kontrast */
+    padding: 10px;
+    border: none;
+    border-radius: 25px; /* Zakulacené rohy */
+    cursor: pointer;
+    text-decoration: none; /* Odstranění podtržení textu */
+}
+
+.submit-button:hover {
+    background-color: #3e8e41;
+}
+
+.error-message {
+    color: #FF0000;
+}
+
+.request-form {
+    display: none;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.request-form input,
+.request-form textarea {
+    background-color: #333333; /* Změněno na tmavší šedou barvu pro lepší kontrast */
+    color: #ffffff; /* Barva textu bílá pro čitelnost */
+    margin: 5px 0;
+    padding: 10px;
+    border: 1px solid #555555; /* Tmavší okraje */
+    border-radius: 5px;
+}
+
+.request-form textarea {
+    resize: none;
+}
+
+.language-bar {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 100;
+}
+
+.language-button {
+    background-color: #4CAF50;
+    color: #000000; /* Změněno na bílou barvu pro lepší kontrast */
+    padding: 10px;
+    border: none;
+    border-radius: 25px; /* Zakulacené rohy */
+    cursor: pointer;
+}
+
+.language-options {
+    display: none;
+    flex-direction: column;
+    background-color: #4CAF50;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.language-options a {
+    color: #000000; /* Změněno na bílou barvu pro lepší kontrast */
+    text-decoration: none; /* Odstranění podtržení textu */
+    padding: 10px;
+}
+
+.language-options a:hover {
+    background-color: #45a049;
+}
+
+.dark-mode-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #333333; /* Změněno na tmavší šedou barvu pro lepší kontrast */
+    color: #ffffff; /* Barva textu bílá pro čitelnost */
+    border: none;
+    border-radius: 25px; /* Zakulacené rohy */
+    padding: 10px;
+    cursor: pointer;
+    text-decoration: none; /* Odstranění podtržení textu */
+}
+
+.dark-mode-toggle:hover {
+    background-color: #555555;
+}
+
+/* Úpravy tlačítka 'Obchod' */
+.shop-button {
+    background-color: #FFA500; /* Oranžové pozadí */
+    color: #000000; /* Černý text */
+    padding: 10px 20px; /* Větší padding pro lepší vzhled */
+    text-decoration: none; /* Odstranění podtržení textu */
+    border: none;
+    border-radius: 25px; /* Oválné rohy */
+    cursor: pointer;
+    display: inline-block; /* Zajišťuje, že tlačítko se chová jako inline prvek */
+}
+
+.shop-button:hover {
+    background-color: #FF8C00; /* Mírně tmavší oranžová na hover efekt */
+    color: #000000;
+}
+
+.scrollable-element {
+    height: 400px; /* nebo jiná výška */
+    overflow: auto; /* nebo scroll */
+  }
+
+  
+  body {
+    overflow: auto; /* nebo scroll, pokud chceš, aby byl vždy zobrazen scrollbar */
+  }
+
+  
+  /* Styly pro posuvník (WebKit) */
+::-webkit-scrollbar {
+    width: 0px; /* Šířka posuvníku */
+}

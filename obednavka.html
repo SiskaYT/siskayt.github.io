@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/x-icon" href="sisky-velke-removebg-preview.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zakázky</title>
+    <link rel="stylesheet" href="obědnávka.css">
+</head>
+<body>
+    <div class="container">
+        <a href="https://siskayt.github.io" class="Back to main page" id="back-to-main-page">Zpátky</a>
+        <H1>Tady napiš informace.</H1>
+        <div>
+            <input class="psaci" type="text" id="first-name" placeholder="Křestní jméno" required>
+            <input class="psaci" type="text" id="last-name" placeholder="Příjmení" required>
+            <input class="psaci" type="email" id="email" placeholder="Váš email" required>
+            <input class="psaci" type="text" id="discord" placeholder="Váš Discord nick (pokud nemáte, nechte -)" required>
+            <textarea class="psaci" id="request" placeholder="Co chcete naprogramovat? (minimálně 15 slov)" required></textarea>
+            <p class="error-message">!Toho erroru si potom nevšímejte!</p>
+            <b>Dokážu naprogramovat discord bota, webovky, atd.</b>
+            <div class="submit-button">
+                <button type="button" class="btn submit-button" onclick="submitRequest()" id="submit-button">Odeslat</button>
+            </div>
+    </div>
+    <div class="language-bar" id="language-bar">
+        <button class="btn language-button" onclick="toggleLanguageBar()" id="language-toggle-button">🚩Jazyky / Languages🚩</button>
+        <div class="language-options" id="language-options">
+            <a href="#" onclick="changeLanguage('cs')">Čeština</a>
+            <a href="#" onclick="changeLanguage('en')">English</a>
+            <a href="#" onclick="changeLanguage('de')">Deutsch</a>
+            <a href="#" onclick="changeLanguage('fr')">Français</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
