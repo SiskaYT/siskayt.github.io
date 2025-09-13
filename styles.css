@@ -1,204 +1,174 @@
+/* === Global === */
 body {
     font-family: Arial, Helvetica, sans-serif;
-    margin: 0px;
-    background-color: #e0e0e0;
+    margin: 0;
+    background: linear-gradient(135deg, #4a90e2, #50c878, #f5af19, #f953c6, #2f80ed);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
     display: flex;
     flex-direction: column;
     align-items: center;
     color: #333;
 }
 
-header {
-    background-color: #b0b0b0;
-    height: 90px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
-.back {
-    text-decoration: none;
-    color: #202020;
-    height: 100px;
-    width: 100px;
-    border: #202020;
-    border-radius: 10px;
+
+/* === Header === */
+header {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 .Logo {
-    width: 45px;
-    margin-top: 30px;
-    border-radius: 500px;
+    width: 60px;
+    margin-right: 15px;
+    border-radius: 50%;
 }
 
 .header {
-    color: #333;
+    font-size: 1.8em;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
+/* === Links === */
 .container {
     display: flex;
     justify-content: center;
     gap: 30px;
-    margin-top: 30px;
+    margin-top: 40px;
     padding: 20px;
+    flex-wrap: wrap;
 }
 
-.Link3 {
-    text-align: center;
-    color: #333;
-    background-color: #d0d0d0;
-    border: 2px solid #333;
-    border-radius: 10px;
-    transition: 0.5s;
-    padding: 15px 20px;
-    width: 120px;
-    height: 120px;
-    font-size: 1.2em;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.Link3, .Link4, .Link11 {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 20px;
+    width: 160px;
+    height: 160px;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 1.2em;
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.Link3:hover {
-    transform: scale(1.05);
-    background-color: #c8c8c8;
+.Link3:hover, .Link4:hover, .Link11:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 20px rgba(255,255,255,0.6);
 }
 
-.Link20:hover, .Link5:hover, .Link6:hover {
-    transform: scale(1.05);
-    background-color: #c8c8c8;
-}
-
-.Projects {
+.Link3 a, .Link4 a, .Link11 a {
     text-decoration: none;
-    color: #333;
-    font-size: 1em;
+    color: #fff;
+    font-weight: bold;
 }
 
+/* === Project Boxes === */
 .projects-boxes {
     display: flex;
     gap: 30px;
-    margin-top: 30px;
+    margin-top: 40px;
     padding: 20px;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
-.Link5, .Link6, .Link20 {
-    text-align: center;
-    color: #333;
-    background-color: #d0d0d0;
-    border: 2px solid #bbb;
-    border-radius: 10px;
-    transition: 0.5s;
-    padding: 60px 20px;
-    width: 450px;
-    height: 350px;
-    font-size: 1.5em;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.Link8, .Link9, .Link10, .Link11, .Link4{
-    text-align: center;
-    color: #333;
-    background-color: #d0d0d0;
-    border: 2px solid #bbb;
-    border-radius: 10px;
-    transition: 0.5s;
-    padding: 60px 20px;
-    width: 1000px;
-    height: 350px;
-    font-size: 1.5em;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.Link8:hover, .Link9:hover, .Link10:hover, .Link11:hover, .Link4:hover {
-    transform: scale(1.05);
-    background-color: #c8c8c8;
-}
-
-.Link10 {
-    background-color: #f0f0f0;
-    border-color: #999;
-}
-
-.Link11 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f0f0f0;
-    border-color: #999;
+.Link5, .Link6, .Link20, .Link10 {
+    background: rgba(255,255,255,0.15);
+    border-radius: 20px;
     padding: 30px 20px;
-    width: 200px;
-    height: 150px;
-    font-size: 1.2em;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    min-height: 300px;
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.Link11 a {
-    color: #333;
+.Link5:hover, .Link6:hover, .Link20:hover, .Link10:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px rgba(255,255,255,0.6);
+}
+
+/* === Typography === */
+h1, h2, h3 {
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+p {
+    font-size: 1em;
+    color: #eee;
+    line-height: 1.6;
+}
+
+/* === Buttons === */
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background: linear-gradient(90deg, #ff6a00, #ff005e);
+    color: white;
     text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s, background 0.3s;
 }
 
-.Link4 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f0f0f0;
-    border-color: #999;
-    padding: 30px 20px;
-    width: 200px;
-    height: 150px;
-    font-size: 1.2em;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.Link4:hover {
+.btn:hover {
     transform: scale(1.05);
-    background-color: #c8c8c8;
+    background: linear-gradient(90deg, #ff005e, #ff6a00);
 }
 
+/* === Footer === */
+footer {
+    margin-top: auto;
+    background: rgba(0,0,0,0.4);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    width: 100%;
+    font-size: 0.9em;
+    backdrop-filter: blur(8px);
+}
 
-.Link4 a {
-    color: #333;
+/* === Back button === */
+.back {
+    display: inline-block;
+    margin: 20px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    color: white;
     text-decoration: none;
+    transition: transform 0.3s;
 }
 
+.back:hover {
+    transform: scale(1.05);
+}
 
+/* === Responsive === */
 @media only screen and (max-width: 768px) {
-    .container {
+    .container, .projects-boxes {
         flex-direction: column;
         align-items: center;
     }
-
-    .Link3 {
-        width: 80%;
-        margin-bottom: 20px;
-    }
-
-    .projects-boxes {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .Link8, .Link9, .Link10, .Link11, .Link4 {
-        width: 80%;
-    }
-
-    .Logo {
-        width: 35px;
-    }
-}
-
-@media only screen and (max-width: 480px) {
-    .Link3, .Link8, .Link9, .Link10, .Link11, .Link4 {
+    .Link3, .Link4, .Link11, .Link5, .Link6, .Link20, .Link10 {
         width: 90%;
-        height: 400px;
-    }
-
-    .header {
-        font-size: 0.9em;
     }
 }
